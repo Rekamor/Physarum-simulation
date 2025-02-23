@@ -1,0 +1,13 @@
+C:\Users\1092023\Desktop\C#\WindowsForms\Physarum simulation\Physarum simulation\bin\Debug\Physarum simulation.exe.config
+C:\Users\1092023\Desktop\C#\WindowsForms\Physarum simulation\Physarum simulation\bin\Debug\Physarum simulation.exe
+C:\Users\1092023\Desktop\C#\WindowsForms\Physarum simulation\Physarum simulation\bin\Debug\Physarum simulation.pdb
+C:\Users\1092023\Desktop\C#\WindowsForms\Physarum simulation\Physarum simulation\obj\Debug\Physarum simulation.csproj.AssemblyReference.cache
+C:\Users\1092023\Desktop\C#\WindowsForms\Physarum simulation\Physarum simulation\obj\Debug\Physarum_simulation.Properties.Resources.resources
+C:\Users\1092023\Desktop\C#\WindowsForms\Physarum simulation\Physarum simulation\obj\Debug\Physarum simulation.csproj.GenerateResource.cache
+C:\Users\1092023\Desktop\C#\WindowsForms\Physarum simulation\Physarum simulation\obj\Debug\Physarum simulation.csproj.CoreCompileInputs.cache
+C:\Users\1092023\Desktop\C#\WindowsForms\Physarum simulation\Physarum simulation\obj\Debug\Physarum simulation.exe
+C:\Users\1092023\Desktop\C#\WindowsForms\Physarum simulation\Physarum simulation\obj\Debug\Physarum simulation.pdb
+C:\Users\1092023\Desktop\C#\WindowsForms\Physarum simulation\Physarum simulation\obj\Debug\Physarum_simulation.Physarum.resources
+C:\Users\1092023\Desktop\C#\WindowsForms\Physarum simulation\Physarum simulation\bin\Debug\Newtonsoft.Json.dll
+C:\Users\1092023\Desktop\C#\WindowsForms\Physarum simulation\Physarum simulation\bin\Debug\Newtonsoft.Json.xml
+C:\Users\1092023\Desktop\C#\WindowsForms\Physarum simulation\Physarum simulation\obj\Debug\Physarum.27348739.Up2Date
