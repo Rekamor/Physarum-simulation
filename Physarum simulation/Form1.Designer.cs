@@ -88,6 +88,7 @@
             this.SetMaxStepAngle.TabIndex = 14;
             this.SetMaxStepAngle.Text = "Set";
             this.SetMaxStepAngle.UseVisualStyleBackColor = true;
+            this.SetMaxStepAngle.Click += new System.EventHandler(this.SetMaxStepAngle_Click);
             // 
             // MinStepAngleBox
             // 
@@ -107,6 +108,7 @@
             this.SetMinStepAngle.TabIndex = 14;
             this.SetMinStepAngle.Text = "Set";
             this.SetMinStepAngle.UseVisualStyleBackColor = true;
+            this.SetMinStepAngle.Click += new System.EventHandler(this.SetMinStepAngle_Click);
             // 
             // label1
             // 
@@ -145,6 +147,7 @@
             this.SetMaxStepLength.TabIndex = 14;
             this.SetMaxStepLength.Text = "Set";
             this.SetMaxStepLength.UseVisualStyleBackColor = true;
+            this.SetMaxStepLength.Click += new System.EventHandler(this.SetMaxStepLength_Click);
             // 
             // SetMinStepLength
             // 
@@ -155,6 +158,7 @@
             this.SetMinStepLength.TabIndex = 14;
             this.SetMinStepLength.Text = "Set";
             this.SetMinStepLength.UseVisualStyleBackColor = true;
+            this.SetMinStepLength.Click += new System.EventHandler(this.SetMinStepLength_Click);
             // 
             // label2
             // 
@@ -204,6 +208,7 @@
             this.SetNecessaryTurn.TabIndex = 14;
             this.SetNecessaryTurn.Text = "Set";
             this.SetNecessaryTurn.UseVisualStyleBackColor = true;
+            this.SetNecessaryTurn.Click += new System.EventHandler(this.SetNecessaryTurn_Click);
             // 
             // label3
             // 
@@ -225,7 +230,7 @@
             this.label4.Text = "NecessaryTurn";
             this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // Physarum
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -250,7 +255,7 @@
             this.Controls.Add(this.GenerateButton);
             this.Controls.Add(this.WorldVisualisation);
             this.Location = new System.Drawing.Point(15, 15);
-            this.Name = "Physarum";
+            this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.WorldVisualisation)).EndInit();
             this.ResumeLayout(false);

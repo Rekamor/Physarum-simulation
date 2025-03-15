@@ -11,6 +11,17 @@ using Newtonsoft.Json;
 
 namespace Physarum_simulation
 {
+    public class Diapazone
+    {
+        public Diapazone(double center, double range)
+        {
+            minvalue = center - range;
+            minvalue = center + range;
+        }
+        public double maxvalue { get; set; }
+        public double minvalue { get; set; }
+    }
+    
     public partial class Physarum : Form
     {
         SimulationSettings Settings = new SimulationSettings();
@@ -21,9 +32,9 @@ namespace Physarum_simulation
         
         private void GenerateButton_Click(object sender, EventArgs e)
         {
-            Random random = new Random();
+            
         }
-
+        
         private class Agent
         {
             public double XPosition { get; set; }
@@ -38,12 +49,64 @@ namespace Physarum_simulation
             int CrazyTimer { get; set; }
         }
 
-        private void SetWobbling_Click(object sender, EventArgs e)
+        private float NormiceMod(float value, float divider)
         {
-            Single.TryParse(WobblingBox.Text, out Settings.Step.Wobbling);
+            if (value >= 0) return value % divider;
+            else return value % divider + divider;
+        }
+        
+        private float Limit(float value, float min, float max)
+        {
+            return Math.Min(Math.Max(value, min), max);
+        }
+        
+        private void SetWobbling_Click(object sender, EventArgs e)
+        { 
+            float wobbling;
+            if (float.TryParse(WobblingBox.Text, out wobbling)) 
+                Settings.Step.Wobbling = NormiceMod(wobbling, 360) - 180;
+            WobblingBox.Text = Settings.Step.Wobbling.ToString();
+        }
+
+        private void SetNecessaryTurn_Click(object sender, EventArgs e)
+        {
+            float necessaryTurn;
+            if (float.TryParse(NecessaryTurnBox.Text, out necessaryTurn)) 
+                Settings.Step.NecessaryTurn = NormiceMod(necessaryTurn, 360) - 180;
+            NecessaryTurnBox.Text = Settings.Step.NecessaryTurn.ToString();
+        }
+
+        private void SetMaxStepAngle_Click(object sender, EventArgs e)
+        {
+            float maxStepAngle;
+            if (float.TryParse(MaxStepAngleBox.Text, out maxStepAngle)) 
+                Settings.Step.MaxAngle = NormiceMod(maxStepAngle, 360) - 180;
+            MaxStepAngleBox.Text = Settings.Step.MaxAngle.ToString();
+            Settings.Step.MinAngle = Math.Min(Settings.Step.MinAngle, Settings.Step.MaxAngle);
+            MinStepAngleBox.Text = Settings.Step.MinAngle.ToString();
+        }
+
+        private void SetMinStepAngle_Click(object sender, EventArgs e)
+        {
+            float minStepAngle;
+            if (float.TryParse(MinStepAngleBox.Text, out minStepAngle)) 
+                Settings.Step.MinAngle = NormiceMod(minStepAngle, 360) - 180;
+            MinStepAngleBox.Text = Settings.Step.MinAngle.ToString();
+            Settings.Step.MaxAngle = Math.Max(Settings.Step.MinAngle, Settings.Step.MaxAngle);
+            MaxStepAngleBox.Text = Settings.Step.MaxAngle.ToString();
+        }
+
+        private void SetMaxStepLength_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void SetMinStepLength_Click(object sender, EventArgs e)
+        {
+            
         }
     }
-    
+      
     struct SimulationSettings
     {
         public FeromonEx Feromon;
@@ -72,7 +135,20 @@ namespace Physarum_simulation
         public float MaxLength { get; set; }
         public float MinLength { get; set; }
         public float MaxAngle { get; set; }
-        public int MinAngle { get; set; }
+        public float MinAngle { get; set; }
+
+        public void Rand()
+        {
+            Random rand = new Random();
+            
+            NecessaryTurn = 3700 / ((float)rand.NextDouble() * 360 + 10) - 190;
+            Wobbling = 3700 / ((float)rand.NextDouble() * 360 + 10) - 190;
+            Diapazone diapazone = new Diapazone(rand.NextDouble() * 5 + 5, rand.NextDouble() * 5);
+            MaxLength = (float)rand.NextDouble();
+            MinLength = (float)rand.NextDouble();
+            MaxAngle = (float)rand.NextDouble();
+            MinAngle = (float)rand.NextDouble();
+        }
     }
     public struct MadnessEx
     {
